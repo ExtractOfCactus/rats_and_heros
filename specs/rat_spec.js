@@ -10,4 +10,9 @@ describe("Rat", function() {
     rat = new Rat("Rizzo");
     food = new Food("Chicken", 20);
   })
+
+  it("should have name", function() {
+    assert.strictEqual(rat.name, "Rizzo");
+  })
+
 })
