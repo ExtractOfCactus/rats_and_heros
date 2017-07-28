@@ -11,8 +11,8 @@ describe("Hero", function() {
 
   beforeEach(function() {
     hero = new Hero("Glendar", 200, "Chicken");
-    task1 = new Task(6, 5, 50);
-    task2 = new Task(2, 3, 75);
+    task1 = new Task(6, 5, 75);
+    task2 = new Task(2, 3, 60);
     task3 = new Task(8, 2, 300);
   })
 
@@ -68,6 +68,14 @@ describe("Hero", function() {
       hero.addTask(task3);
       hero.sortTasks("urgency");
       assert.deepEqual(hero.tasks[0], task3);
+    })
+
+  it("can sort tasks in order of given parameter(reward)", function() {
+      hero.addTask(task1);
+      hero.addTask(task2);
+      hero.addTask(task3);
+      hero.sortTasks("reward");
+      assert.deepEqual(hero.tasks[0], task2);
     })
 
 })
