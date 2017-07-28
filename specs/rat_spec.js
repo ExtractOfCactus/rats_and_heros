@@ -15,6 +15,9 @@ describe("Rat", function() {
     assert.strictEqual(rat.name, "Rizzo");
   })
 
- 
+ it("can touch food", function() {
+   rat.touch(food);
+   assert.strictEqual(food.poisoned, true);
+ })
 
 })
