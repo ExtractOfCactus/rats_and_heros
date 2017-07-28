@@ -43,9 +43,9 @@ describe("Hero", function() {
   })
 
   it("can eat favourite food", function() {
-    var food = new Food("Chicken", 15);
+    var food = new Food("Chicken", 20);
     hero.eat(food);
     assert.strictEqual(hero.health, 230);
   })
-  
+
 })
