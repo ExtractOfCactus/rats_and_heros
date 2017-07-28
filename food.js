@@ -3,4 +3,4 @@ var Food = function(name, replenish) {
   this.replenish = replenish
 }
 
-module.expports = Food;
+module.exports = Food;
