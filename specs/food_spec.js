@@ -22,6 +22,7 @@ describe("Food", function() {
 
   it("can set poisoned boolean", function() {
     food.setPoisoned();
+    // food.poisoned = true;
     assert.strictEqual(food.poisoned, true);
   })
 })

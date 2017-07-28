@@ -4,4 +4,8 @@ var Food = function(name, replenish) {
   this.poisoned = false;
 }
 
+Food.prototype.setPoisoned = function() {
+  this.poisoned = true;
+};
+
 module.exports = Food;
