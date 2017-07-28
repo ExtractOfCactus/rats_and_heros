@@ -25,4 +25,11 @@ Hero.prototype.sortTasks = function(param) {
   });
 }
 
+Hero.prototype.viewTasks = function(param) {
+  var resultArray = _.filter(this.tasks, function(task) {
+    return task.complete === param;
+  }) 
+  return resultArray;
+}
+
 module.exports = Hero;
