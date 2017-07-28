@@ -41,4 +41,11 @@ describe("Hero", function() {
     hero.eat(food);
     assert.strictEqual(hero.health, 210);
   })
+
+  it("can eat favourite food", function() {
+    var food = new Food("Chicken", 15);
+    hero.eat(food);
+    assert.strictEqual(hero.health, 230);
+  })
+  
 })
