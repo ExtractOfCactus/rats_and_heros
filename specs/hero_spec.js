@@ -23,4 +23,8 @@ describe("Hero", function() {
   it("can say own name", function() {
     assert.strictEqual(hero.sayName(), "I am the mighty Glendar!")
   })
+
+  it("tasks list starts empty", function() {
+    assert.strictEqual(hero.tasks.length, 0);
+  })
 })
