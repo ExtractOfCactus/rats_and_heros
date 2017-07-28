@@ -5,4 +5,8 @@ var Hero = function(name, health, favFood) {
   this.tasks = [];
 }
 
+Hero.prototype.sayName = function() {
+  return "I am the mighty " + this.name + "!";
+};
+
 module.exports = Hero;
