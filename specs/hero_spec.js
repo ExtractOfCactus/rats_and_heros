@@ -34,4 +34,10 @@ describe("Hero", function() {
     hero.addTask(task);
     assert.strictEqual(hero.tasks.length, 1);
   })
+
+  it("can eat food", function() {
+    var food = new Food("Bread", 10);
+    hero.eat(food);
+    assert.strictEqual(hero.health, 210);
+  })
 })
