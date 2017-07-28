@@ -18,6 +18,6 @@ describe("Rat", function() {
  it("can touch food", function() {
    rat.touch(food);
    assert.strictEqual(food.poisoned, true);
- })
+  })
 
 })
