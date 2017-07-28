@@ -19,4 +19,9 @@ describe("Food", function() {
   it("should have default false poisoned boolean", function() {
     assert.strictEqual(food.poisoned, false);
   })
+
+  it("can set poisoned boolean", function() {
+    food.setPoisoned();
+    assert.strictEqual(food.poisoned, true);
+  })
 })
