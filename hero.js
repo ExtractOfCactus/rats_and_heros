@@ -14,7 +14,7 @@ Hero.prototype.addTask = function(task) {
 };
 
 Hero.prototype.eat = function(food) {
-  this.health += food.replenish;
+  this.favFood === food.name ? this.health += (food.replenish * 2) : this.health += food.replenish;
 };
 
 module.exports = Hero;
