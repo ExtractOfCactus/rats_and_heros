@@ -1,5 +1,6 @@
 var assert = require("assert");
 var Hero = require("../hero");
+var Task = require("../hero");
 
 describe("Hero", function() {
   var hero;
@@ -21,10 +22,16 @@ describe("Hero", function() {
   })
 
   it("can say own name", function() {
-    assert.strictEqual(hero.sayName(), "I am the mighty Glendar!")
+    assert.strictEqual(hero.sayName(), "I am the mighty Glendar!");
   })
 
   it("tasks list starts empty", function() {
     assert.strictEqual(hero.tasks.length, 0);
+  })
+
+  it("can add tasks to tasks list", function() {
+    var task = new Task(3, "low", 50);
+    hero.addTask(task);
+    assert.strictEqual(hero.tasks.length, 1);
   })
 })
