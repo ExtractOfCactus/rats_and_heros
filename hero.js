@@ -13,4 +13,8 @@ Hero.prototype.addTask = function(task) {
   this.tasks.push(task);
 };
 
+Hero.prototype.eat = function(food) {
+  this.health += food.replenish;
+};
+
 module.exports = Hero;
