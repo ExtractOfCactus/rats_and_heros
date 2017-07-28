@@ -19,4 +19,9 @@ describe("Task", function() {
   it("should have reward", function() {
     assert.strictEqual(task.reward, 50);
   })
+
+  it("can be marked as complete", function() {
+    task.setComplete();
+    assert.strictEqual(task.complete, true);
+  })
 })
