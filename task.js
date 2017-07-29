@@ -1,4 +1,5 @@
-var Task = function(difficulty, urgency, reward){
+var Task = function(description, difficulty, urgency, reward){
+  this.description = description;
   this.difficulty = difficulty;
   this.urgency = urgency;
   this.reward = reward;

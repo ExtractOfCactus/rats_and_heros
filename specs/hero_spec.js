@@ -11,9 +11,9 @@ describe("Hero", function() {
 
   beforeEach(function() {
     hero = new Hero("Glendar", 200, "Chicken");
-    task1 = new Task(6, 5, 75);
-    task2 = new Task(2, 3, 60);
-    task3 = new Task(8, 2, 300);
+    task1 = new Task("Dance", 6, 5, 75);
+    task2 = new Task("Win a race", 2, 3, 60);
+    task3 = new Task("Kill the King", 8, 2, 300);
   })
 
   it("should have a name", function() {

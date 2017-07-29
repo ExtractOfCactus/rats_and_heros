@@ -5,7 +5,11 @@ describe("Task", function() {
   var task;
 
   beforeEach(function() {
-    task = new Task(3, 4, 50);
+    task = new Task("Slay Eugene, the hideous goblin child", 3, 4, 50);
+  })
+
+  it("should have a description", function() {
+    assert.strictEqual(task.description, "Slay Eugene, the hideous goblin child")
   })
 
   it("should have difficulty level", function() {
