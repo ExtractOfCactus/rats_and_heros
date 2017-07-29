@@ -12,9 +12,9 @@ describe("Hero", function() {
 
   beforeEach(function() {
     hero = new Hero("Glendar", 200, "Chicken");
-    task1 = new Task("Dance", 6, 5, 75);
-    task2 = new Task("Win a race", 2, 3, 60);
-    task3 = new Task("Kill the King", 8, 2, 300);
+    task1 = new Task("Dance", 6, 5, 75, 0);
+    task2 = new Task("Win a race", 2, 3, 60, 50);
+    task3 = new Task("Kill the King", 8, 2, 300, 400);
   })
 
   it("should have a name", function() {
@@ -35,6 +35,10 @@ describe("Hero", function() {
 
   it("tasks list starts empty", function() {
     assert.strictEqual(hero.tasks.length, 0);
+  })
+
+  it("experience starts empty", function() {
+    assert.strictEqual(hero.exp, 0);
   })
 
   it("can add tasks to tasks list", function() {
@@ -95,5 +99,7 @@ describe("Hero", function() {
     assert.deepEqual(hero.viewTasks(true), [task2]);
     assert.deepEqual(hero.viewTasks(false), [task1, task3]);
   })
+
+
 
 })
