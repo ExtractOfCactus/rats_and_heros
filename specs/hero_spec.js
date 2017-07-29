@@ -2,6 +2,7 @@ var assert = require("assert");
 var Hero = require("../hero");
 var Task = require("../task");
 var Food = require("../food");
+var Rat = require("../rat");
 
 describe("Hero", function() {
   var hero;
@@ -52,6 +53,14 @@ describe("Hero", function() {
     var food = new Food("Chicken", 20);
     hero.eat(food);
     assert.strictEqual(hero.health, 230);
+  })
+
+  it("can eat poisoned food", function() {
+    var food = new Food("Bread", 10);
+    var rat = new Rat("Rizzo");
+    rat.touch(food);
+    hero.eat(food);
+    assert.strictEqual(hero.health, 190);
   })
 
   it("can sort tasks in order of given parameter(difficulty)", function() {
