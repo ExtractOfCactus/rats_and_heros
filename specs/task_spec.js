@@ -5,7 +5,7 @@ describe("Task", function() {
   var task;
 
   beforeEach(function() {
-    task = new Task("Slay Eugene, the hideous goblin child", 3, 4, 50);
+    task = new Task("Slay Eugene, the hideous goblin child", 3, 4, 50, 120);
   })
 
   it("should have a description", function() {
@@ -22,6 +22,10 @@ describe("Task", function() {
 
   it("should have reward", function() {
     assert.strictEqual(task.reward, 50);
+  })
+
+  it("should have exp", function() {
+    assert.strictEqual(task.exp, 120);
   })
 
   it("can be marked as complete", function() {
