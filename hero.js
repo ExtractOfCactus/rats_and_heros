@@ -17,7 +17,12 @@ Hero.prototype.addTask = function(task) {
 };
 
 Hero.prototype.eat = function(food) {
-  this.favFood === food.name ? this.health += (food.replenish * 1.5) : this.health += food.replenish;
+  if (food.poisoned) {
+    this.health -= food.replenish;
+  }
+  else {
+    this.favFood === food.name ? this.health += (food.replenish * 1.5) : this.health += food.replenish;
+  }
 };
 
 Hero.prototype.sortTasks = function(param) {
