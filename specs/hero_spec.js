@@ -100,6 +100,10 @@ describe("Hero", function() {
     assert.deepEqual(hero.viewTasks(false), [task1, task3]);
   })
 
-
+  it("can gain experience", function() {
+    hero.addTask(task3);
+    task3.setComplete();
+    assert.strictEqual(hero.exp, 50);
+  })
 
 })
