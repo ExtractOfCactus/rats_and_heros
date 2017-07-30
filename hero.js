@@ -5,7 +5,16 @@ var Hero = function(name, health, favFood) {
   this.health = health;
   this.favFood = favFood;
   this.tasks = [];
-  this.exp = 0;
+  this.xp = function() {
+    var resultXp = 0;
+    for (var task of this.tasks) {
+      if (task.complete) {
+        resultXp += task.exp;
+      }
+    }
+    return resultXp;
+  }
+  // this.xp = setExperience();
 }
 
 Hero.prototype.sayName = function() {
@@ -37,5 +46,6 @@ Hero.prototype.viewTasks = function(param) {
   }) 
   return resultArray;
 }
+
 
 module.exports = Hero;

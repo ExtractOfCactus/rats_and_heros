@@ -38,7 +38,7 @@ describe("Hero", function() {
   })
 
   it("experience starts empty", function() {
-    assert.strictEqual(hero.exp, 0);
+    assert.strictEqual(hero.xp(), 0);
   })
 
   it("can add tasks to tasks list", function() {
@@ -103,7 +103,7 @@ describe("Hero", function() {
   it("can gain experience", function() {
     hero.addTask(task3);
     task3.setComplete();
-    assert.strictEqual(hero.exp, 50);
+    assert.strictEqual(hero.xp(), 400);
   })
 
 })
