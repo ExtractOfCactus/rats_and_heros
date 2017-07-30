@@ -4,6 +4,7 @@ var Task = require("../task");
 var Food = require("../food");
 var Rat = require("../rat");
 var Weapon = require("../weapon");
+var Monster = require("../monster");
 
 describe("Hero", function() {
   var hero;
@@ -13,6 +14,7 @@ describe("Hero", function() {
   var weapon1;
   var weapon2;
   var weapon3;
+  var monster;
 
   beforeEach(function() {
     hero = new Hero("Glendar", 200, "Chicken");
@@ -22,6 +24,7 @@ describe("Hero", function() {
     weapon1 = new Weapon("Bronze Longsword", 20, false);
     weapon2 = new Weapon("Steel Dagger", 18, false);
     weapon3 = new Weapon("Maple Longbow", 15, true);
+    monster = new Monster("Orc", weapon1, 50);
   })
 
   it("should have a name", function() {
@@ -131,6 +134,12 @@ describe("Hero", function() {
     hero.addTask(task3);
     task3.setComplete();
     assert.strictEqual(hero.xp(), 400);
+  })
+
+  it("can attack monster", function(){
+    hero.equipWeapon(weapon2);
+    hero.attack(monster);
+    assert.strictEqual(montser.health, 32);
   })
 
 })
