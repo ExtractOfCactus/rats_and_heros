@@ -14,7 +14,6 @@ var Hero = function(name, health, favFood) {
     }
     return resultXp;
   }
-  // this.xp = setExperience();
 }
 
 Hero.prototype.sayName = function() {
