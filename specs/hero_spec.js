@@ -3,18 +3,21 @@ var Hero = require("../hero");
 var Task = require("../task");
 var Food = require("../food");
 var Rat = require("../rat");
+var Weapon = require("../weapon");
 
 describe("Hero", function() {
   var hero;
   var task1;
   var task2;
   var task3;
+  var weapon1;
 
   beforeEach(function() {
     hero = new Hero("Glendar", 200, "Chicken");
     task1 = new Task("Dance", 6, 5, 75, 0);
     task2 = new Task("Win a race", 2, 3, 60, 50);
     task3 = new Task("Kill the King", 8, 2, 300, 400);
+    weapon1 = new Weapon("Bronze Longsword", 20);
   })
 
   it("should have a name", function() {
@@ -43,6 +46,11 @@ describe("Hero", function() {
 
   it("experience starts empty", function() {
     assert.strictEqual(hero.xp(), 0);
+  })
+
+  it("can add weapons", function() {
+    hero.equipWeapon(weapon1);
+    assert.strictEqual(hero.weapons.length, 1);
   })
 
   it("can add tasks to tasks list", function() {
