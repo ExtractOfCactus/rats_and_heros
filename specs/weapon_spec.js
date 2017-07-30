@@ -5,7 +5,7 @@ describe("Weapon", function() {
   var weapon;
 
   beforeEach(function() {
-    weapon = new Weapon("Bronze Longsword", 20);
+    weapon = new Weapon("Bronze Longsword", 20, false);
   })
 
   it("should have a name", function() {

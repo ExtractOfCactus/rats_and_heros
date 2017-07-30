@@ -11,13 +11,15 @@ describe("Hero", function() {
   var task2;
   var task3;
   var weapon1;
+  var weapon2;
 
   beforeEach(function() {
     hero = new Hero("Glendar", 200, "Chicken");
     task1 = new Task("Dance", 6, 5, 75, 0);
     task2 = new Task("Win a race", 2, 3, 60, 50);
     task3 = new Task("Kill the King", 8, 2, 300, 400);
-    weapon1 = new Weapon("Bronze Longsword", 20);
+    weapon1 = new Weapon("Bronze Longsword", 20, false);
+    weapon1 = new Weapon("Bronze Longsword", 20, false);
   })
 
   it("should have a name", function() {

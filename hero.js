@@ -21,6 +21,20 @@ Hero.prototype.sayName = function() {
   return "I am the mighty " + this.name + "!";
 };
 
+Hero.prototype.equipWeapon = function(weapon) {
+  for (var item of this.weapons) {
+    if(item.twoHanded) {
+      return "You are already holding a two handed weapon!"
+    }
+  }  
+  if (this.weapons < 2) {
+    this.weapons.push(weapon);
+  }
+  else {
+    return "Your hands are full!";
+  }
+};
+
 Hero.prototype.addTask = function(task) {
   this.tasks.push(task);
 };
