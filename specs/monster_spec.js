@@ -10,7 +10,7 @@ describe("Monster", function() {
 
   beforeEach(function() {
     weapon1 = new Weapon("Bronze Shortsword", 10, false);
-    monster = new Monster("Goblin", weapon1, 50);
+    monster = new Monster("Goblin", weapon1, 50, 5);
     hero = new Hero("Glendar", 200, "Chicken");
   })
 
