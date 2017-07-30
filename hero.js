@@ -80,7 +80,7 @@ Hero.prototype.attack = function(monster) {
   else {
     monster.health = 0;
     this.fightingXp += (monster.level * 10);
-    return "The " + monster.type + "has been slain";
+    return "The " + monster.type + " has been slain";
   }
 };
 
