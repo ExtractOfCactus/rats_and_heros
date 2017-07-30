@@ -142,10 +142,4 @@ describe("Hero", function() {
     assert.strictEqual(monster.health, 32);
   })
 
-  it("can be killed", function() {
-    var weakMonster = new Monster("Goblin", weapon1, 15, 5);
-    hero.equipWeapon(weapon2);
-    assert.deepEqual(weakMonster.health, 0);
-  })
-
 })

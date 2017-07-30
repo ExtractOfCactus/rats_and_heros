@@ -6,6 +6,7 @@ var Hero = function(name, health, favFood) {
   this.favFood = favFood;
   this.weapons = [];
   this.tasks = [];
+  this.fightingXp = 0;
   this.xp = function() {
     var resultXp = 0;
     for (var task of this.tasks) {
@@ -13,7 +14,7 @@ var Hero = function(name, health, favFood) {
         resultXp += task.exp;
       }
     }
-    return resultXp;
+    return resultXp += this.fightingXp;
   }
 }
 
@@ -73,7 +74,14 @@ Hero.prototype.attack = function(monster) {
   for (var weapon of this.weapons) {
     totalDamage += weapon.damage;
   }
-  monster.health -= totalDamage;
+  if (monster.health > totalDamage) {
+    monster.health -= totalDamage;
+  }
+  else {
+    monster.health = 0;
+    this.fightingXp += (monster.level * 10);
+    return "The " + monster.type + "has been slain";
+  }
 };
 
 
