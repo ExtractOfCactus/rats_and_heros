@@ -13,4 +13,8 @@ describe("Armour", function() {
   it("should have an assigned body part", function() {
     assert.strictEqual(helmet1.bodyPart, "Head");
   })
+
+  it("should have a defense value", function() {
+    assert.strictEqual(helmet2.defense, 15);
+  })
 })
