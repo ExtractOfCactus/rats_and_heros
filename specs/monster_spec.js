@@ -18,4 +18,8 @@ describe("Monster", function() {
   it("should have a weapon", function() {
     assert.deepEqual(monster.weapon, weapon1)
   })
+
+  it("should have health", function() {
+    assert.strictEqual(monster.health, 50);
+  })
 })
