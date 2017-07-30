@@ -145,7 +145,7 @@ describe("Hero", function() {
   it("can kill monster", function() {
     var weakMonster = new Monster("Goblin", weapon1, 15, 5);
     hero.equipWeapon(weapon2);
-    assert.strictEqual(hero.attack(weakMonster), "The Goblin has been slain")
+    assert.strictEqual(hero.attack(weakMonster), "The Goblin has been slain");
   })
 
   it("can can gain experience for slaying a monster", function() {
