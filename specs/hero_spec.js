@@ -139,7 +139,7 @@ describe("Hero", function() {
   it("can attack monster", function(){
     hero.equipWeapon(weapon2);
     hero.attack(monster);
-    assert.strictEqual(montser.health, 32);
+    assert.strictEqual(monster.health, 32);
   })
 
 })

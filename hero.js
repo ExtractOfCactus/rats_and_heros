@@ -68,5 +68,13 @@ Hero.prototype.viewTasks = function(param) {
   return resultArray;
 }
 
+Hero.prototype.attack = function(monster) {
+  var totalDamage = 0;
+  for (var weapon of this.weapons) {
+    totalDamage += weapon.damage;
+  }
+  monster.health -= totalDamage;
+};
+
 
 module.exports = Hero;
