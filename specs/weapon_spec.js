@@ -15,4 +15,8 @@ describe("Weapon", function() {
   it("should have damage", function() {
     assert.strictEqual(weapon.damage, 20);
   })
+
+  it("should have two handed boolean check", function() {
+    assert.strictEqual(weapon.twoHanded, false);
+  })
 })
