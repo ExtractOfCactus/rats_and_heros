@@ -65,7 +65,7 @@ describe("Hero", function() {
 
   it("cannot add weapons if already holding a two handed weapon", function() {
     hero.equipWeapon(weapon3);
-    assert.strictEqual(hero.equipWeapon(weapon1), "You are already holding a two handed weapon!");
+    assert.strictEqual(hero.equipWeapon(weapon1), "Your hands are full!");
   })
 
   it("can add tasks to tasks list", function() {

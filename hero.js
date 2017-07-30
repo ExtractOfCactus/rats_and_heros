@@ -21,17 +21,24 @@ Hero.prototype.sayName = function() {
   return "I am the mighty " + this.name + "!";
 };
 
-Hero.prototype.equipWeapon = function(weapon) {
+Hero.prototype.checkTwoHanded = function() {
   for (var item of this.weapons) {
     if(item.twoHanded) {
-      return "You are already holding a two handed weapon!"
+      return true;
     }
-  }  
-  if (this.weapons < 2) {
+  }
+};
+
+Hero.prototype.fullHands = function() {
+  return "Your hands are full!"
+};
+
+Hero.prototype.equipWeapon = function(weapon) {
+  if (this.weapons.length < 2 && !(this.checkTwoHanded())) {
     this.weapons.push(weapon);
   }
   else {
-    return "Your hands are full!";
+    return this.fullHands();
   }
 };
 
