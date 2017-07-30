@@ -12,6 +12,7 @@ describe("Hero", function() {
   var task3;
   var weapon1;
   var weapon2;
+  var weapon3;
 
   beforeEach(function() {
     hero = new Hero("Glendar", 200, "Chicken");
@@ -19,7 +20,8 @@ describe("Hero", function() {
     task2 = new Task("Win a race", 2, 3, 60, 50);
     task3 = new Task("Kill the King", 8, 2, 300, 400);
     weapon1 = new Weapon("Bronze Longsword", 20, false);
-    weapon1 = new Weapon("Bronze Longsword", 20, false);
+    weapon2 = new Weapon("Steel Dagger", 18, false);
+    weapon3 = new Weapon("Maple Longbow", 15, true);
   })
 
   it("should have a name", function() {
@@ -53,6 +55,12 @@ describe("Hero", function() {
   it("can add weapons", function() {
     hero.equipWeapon(weapon1);
     assert.strictEqual(hero.weapons.length, 1);
+  })
+
+  it("cannot add weapons if hands are full", function() {
+    hero.equipWeapon(weapon1);
+    hero.equipWeapon(weapon2);
+    assert.strictEqual(hero.equipWeapon(weapon3), "Your hands are full!")
   })
 
   it("can add tasks to tasks list", function() {
