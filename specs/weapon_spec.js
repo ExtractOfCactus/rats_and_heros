@@ -11,4 +11,8 @@ describe("Weapon", function() {
   it("should have a name", function() {
     assert.strictEqual(weapon.name, "Bronze Longsword");
   })
+
+  it("should have damage", function() {
+    assert.strictEqual(weapon.damage, 20);
+  })
 })
