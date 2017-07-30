@@ -36,6 +36,6 @@ describe("Monster", function() {
     hero.equipWeapon(weapon1);
     hero.attack(weakMonster);
     assert.strictEqual(weakMonster.health, 0);
-    assert.strictEqual(hero.xp(), 50);
   })
+
 })

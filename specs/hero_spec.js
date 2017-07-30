@@ -142,4 +142,11 @@ describe("Hero", function() {
     assert.strictEqual(monster.health, 32);
   })
 
+  it("can can gain experience for slaying a monster", function() {
+    var weakMonster = new Monster("Goblin", weapon1, 15, 5);
+    hero.equipWeapon(weapon2);
+    hero.attack(weakMonster);
+    assert.deepEqual(hero.xp(), 50);
+  })
+
 })
