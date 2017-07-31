@@ -74,6 +74,12 @@ describe("Hero", function() {
     assert.strictEqual(hero.equipWeapon(weapon1), "Your hands are full!");
   })
 
+  it("can remove weapon", function() {
+    hero.equipWeapon(weapon1);
+    hero.dropWeapon(weapon1);
+    assert.strictEqual(hero.weapons.length, 0);
+  })
+
   it("starts without any armour", function() {
     assert.strictEqual(hero.armour.length, 0);
   })
