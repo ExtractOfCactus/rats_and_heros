@@ -46,7 +46,7 @@ Hero.prototype.equipWeapon = function(weapon) {
 
 Hero.prototype.equipArmour = function(armourPiece) {
   for (var item of this.armour) {
-    if (this.armour.length >= 6 || item.bodyPart === armourPiece.bodyPart) {
+    if (item.bodyPart === armourPiece.bodyPart) {
       return "Already wearing armour on that body part";
     }
   }

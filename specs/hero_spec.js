@@ -84,6 +84,14 @@ describe("Hero", function() {
     assert.strictEqual(hero.armour.length, 1);
   })
 
+  it("cannot add more than one piece per body part", function() {
+    var helmet1 = new Armour("Steel Helmet", "Head", 10);
+    var helmet2 = new Armour("Iron Helmet", "Head", 8);
+    hero.equipArmour(helmet2);
+    hero.equipArmour(helmet1);
+    assert.strictEqual(hero.armour.length, 1);
+  })
+
   it("can add tasks to tasks list", function() {
     var task = new Task(3, "low", 50);
     hero.addTask(task);
