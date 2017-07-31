@@ -164,8 +164,8 @@ describe("Hero", function() {
     hero.addTask(task1);
     hero.addTask(task2);
     hero.addTask(task3);
-    assert.deepEqual(hero.viewTasks(true), [task2]);
-    assert.deepEqual(hero.viewTasks(false), [task1, task3]);
+    assert.deepEqual(hero.viewTasksByCompletion(true), [task2]);
+    assert.deepEqual(hero.viewTasksByCompletion(false), [task1, task3]);
   })
 
   it("can gain experience", function() {

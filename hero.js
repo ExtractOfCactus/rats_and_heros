@@ -100,7 +100,7 @@ Hero.prototype.sortTasks = function(param) {
   });
 }
 
-Hero.prototype.viewTasks = function(param) {
+Hero.prototype.viewTasksByCompletion = function(param) {
   var resultArray = _.filter(this.tasks, function(task) {
     return task.complete === param;
   }) 
