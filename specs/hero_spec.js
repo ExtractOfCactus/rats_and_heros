@@ -5,6 +5,7 @@ var Food = require("../food");
 var Rat = require("../rat");
 var Weapon = require("../weapon");
 var Monster = require("../monster");
+var Armour = require("../armour");
 
 describe("Hero", function() {
   var hero;
@@ -25,6 +26,8 @@ describe("Hero", function() {
     weapon2 = new Weapon("Steel Dagger", 18, false);
     weapon3 = new Weapon("Maple Longbow", 15, true);
     monster = new Monster("Orc", weapon1, 50);
+    
+    helmet = new Armour("Steel Helmet", "Head", 10);
   })
 
   it("should have a name", function() {
@@ -69,6 +72,10 @@ describe("Hero", function() {
   it("cannot add weapons if already holding a two handed weapon", function() {
     hero.equipWeapon(weapon3);
     assert.strictEqual(hero.equipWeapon(weapon1), "Your hands are full!");
+  })
+
+  it("starts without any armour", function() {
+    assert.strictEqual(hero.armour.length, 0);
   })
 
   it("can add tasks to tasks list", function() {
@@ -154,5 +161,7 @@ describe("Hero", function() {
     hero.attack(weakMonster);
     assert.deepEqual(hero.xp(), 50);
   })
+
+
 
 })
