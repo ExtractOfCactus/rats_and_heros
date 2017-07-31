@@ -5,6 +5,7 @@ var Hero = function(name, health, favFood) {
   this.health = health;
   this.favFood = favFood;
   this.weapons = [];
+  this.armour = []
   this.tasks = [];
   this.fightingXp = 0;
   this.xp = function() {

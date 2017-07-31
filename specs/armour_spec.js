@@ -6,8 +6,12 @@ describe("Armour", function() {
   var helmet2;
 
   beforeEach(function() {
-    helmet1 = new Armour("Head", 10);
-    helmet2 = new Armour("Head", 15);
+    helmet1 = new Armour("Bronze Helmet", "Head", 10);
+    helmet2 = new Armour("Steel Helmet", "Head", 15);
+  })
+
+  it("should have a name", function() {
+    assert.strictEqual(helmet1.name, "Bronze Helmet");
   })
 
   it("should have an assigned body part", function() {
