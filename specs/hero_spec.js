@@ -16,6 +16,7 @@ describe("Hero", function() {
   var weapon2;
   var weapon3;
   var monster;
+  var helmet1;
 
   beforeEach(function() {
     hero = new Hero("Glendar", 200, "Chicken");
@@ -26,8 +27,7 @@ describe("Hero", function() {
     weapon2 = new Weapon("Steel Dagger", 18, false);
     weapon3 = new Weapon("Maple Longbow", 15, true);
     monster = new Monster("Orc", weapon1, 50);
-    
-    helmet = new Armour("Steel Helmet", "Head", 10);
+    helmet1 = new Armour("Steel Helmet", "Head", 10);
   })
 
   it("should have a name", function() {
@@ -85,17 +85,22 @@ describe("Hero", function() {
   })
 
   it("can equip armour", function() {
-    var helmet1 = new Armour("Steel Helmet", "Head", 10);
+    
     hero.equipArmour(helmet1);
     assert.strictEqual(hero.armour.length, 1);
   })
 
   it("cannot add more than one piece per body part", function() {
-    var helmet1 = new Armour("Steel Helmet", "Head", 10);
     var helmet2 = new Armour("Iron Helmet", "Head", 8);
     hero.equipArmour(helmet2);
     hero.equipArmour(helmet1);
     assert.strictEqual(hero.armour.length, 1);
+  })
+
+  it("can remove armour", function() {
+    hero.equipArmour(helmet1);
+    hero.removeArmour(helmet1);
+    assert.strictEqual(hero.armour.length, 0);
   })
 
   it("can add tasks to tasks list", function() {

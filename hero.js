@@ -44,6 +44,16 @@ Hero.prototype.equipWeapon = function(weapon) {
   }
 };
 
+Hero.prototype.dropWeapon = function(weapon) {
+  for (var item in this.weapons) {
+    if (this.weapons[item].name === weapon.name) {
+      this.weapons.splice(item, 1);
+      return "Weapon removed!";
+    }
+  }
+  return "You are not carrying that weapon"
+};
+
 Hero.prototype.equipArmour = function(armourPiece) {
   for (var item of this.armour) {
     if (item.bodyPart === armourPiece.bodyPart) {
