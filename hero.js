@@ -51,16 +51,26 @@ Hero.prototype.dropWeapon = function(weapon) {
       return "Weapon removed!";
     }
   }
-  return "You are not carrying that weapon"
+  return "You are not carrying that weapon."
 };
 
 Hero.prototype.equipArmour = function(armourPiece) {
   for (var item of this.armour) {
     if (item.bodyPart === armourPiece.bodyPart) {
-      return "Already wearing armour on that body part";
+      return "Already wearing armour on that body part.";
     }
   }
   this.armour.push(armourPiece);
+};
+
+Hero.prototype.removeArmour = function(armourPiece) {
+  for (var item in this.armour) {
+    if (this.armour[item].name === armourPiece.name) {
+      this.armour.splice(item, 1);
+      return "Armour removed!"
+    }
+  }
+  return "You are not wearing such a piece."
 };
 
 Hero.prototype.addTask = function(task) {
