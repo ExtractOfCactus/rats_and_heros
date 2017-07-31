@@ -103,6 +103,12 @@ describe("Hero", function() {
     assert.strictEqual(hero.armour.length, 0);
   })
 
+  it("can wear armour to reduce damage", function() {
+    hero.equipArmour(helmet1);
+    monster.attack(hero);
+    assert.strictEqual(hero.health, 190);
+  })
+
   it("can add tasks to tasks list", function() {
     var task = new Task(3, "low", 50);
     hero.addTask(task);
