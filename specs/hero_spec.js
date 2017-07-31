@@ -78,6 +78,12 @@ describe("Hero", function() {
     assert.strictEqual(hero.armour.length, 0);
   })
 
+  it("can equip armour", function() {
+    var helmet1 = new Armour("Steel Helmet", "Head", 10);
+    hero.equipArmour(helmet1);
+    assert.strictEqual(hero.armour.length, 1);
+  })
+
   it("can add tasks to tasks list", function() {
     var task = new Task(3, "low", 50);
     hero.addTask(task);
