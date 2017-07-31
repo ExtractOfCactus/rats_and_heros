@@ -6,7 +6,11 @@ var Monster = function(type, weapon, health, level) {
 }
 
 Monster.prototype.attack = function(hero) {
-  hero.health -= this.weapon.damage
+  var totalDamage = (this.weapon.damage - hero.damageReduction());
+  if (totalDamage < 0) {
+    totalDamage = 0;
+  }
+  hero.health -= totalDamage;
 };
 
 module.exports = Monster;

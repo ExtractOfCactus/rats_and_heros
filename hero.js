@@ -63,6 +63,14 @@ Hero.prototype.equipArmour = function(armourPiece) {
   this.armour.push(armourPiece);
 };
 
+Hero.prototype.damageReduction = function() {
+  var result = 0;
+  for (item of this.armour) {
+    result += item.defense;
+  }
+  return result;
+}
+
 Hero.prototype.removeArmour = function(armourPiece) {
   for (var item in this.armour) {
     if (this.armour[item].name === armourPiece.name) {
